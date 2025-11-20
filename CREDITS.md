@@ -1,0 +1,5 @@
+- Header: https://www.ghibli.jp/works/
+  - Light Effect: https://gifs.alphacoders.com/gifs/view/14260
+- Profile Picture: https://meiker.io/play/11374/online.html
+- Easter Egg (Jokebear): https://store.line.me/stickershop/product/3147970/en
+- Icons: https://icons.getbootstrap.com/
