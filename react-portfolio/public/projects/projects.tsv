@@ -1,0 +1,5 @@
+Title	Image	Tags	Description	Page	GitHub
+High Food Prices	eggs	HTML, CSS, JavaScript, React, D3.js, Vercel	A data visualization project exploring the potential causes behind the high prices of food today. Uses React and D3.js to create charts.	https://eggs-zeta.vercel.app/	https://github.com/riaaa16/eggs
+Swiss Punk	swiss_punk	HTML, CSS, JavaScript	A one-page static website exploring the principles of New Wave typography in web design. Largely inspired by Wolfgang Weingart's works.	https://riaaa16.github.io/swiss-punk/	https://github.com/riaaa16/swiss-punk
+Art Supplies Shop	art_supplies_inventory	PHP, CSS, JavaScript, XML, SQL	An art supplies inventory website that queries a database using PHP and SQL. Uses AJAX to display real-time information regarding the database.	https://web.njit.edu/~vg435/IT202/vg435-IT202-Website/website/	https://github.com/riaaa16/vg435-IT202-Website
+Artist Commissions	artist_comms	HTML, CSS	A one-page static website showing an artist's mini portfolio, commission prices, and TOS. Uses Glightbox to create modal image galleries.	https://tinyria.github.io/comms/	https://github.com/tinyria/comms
