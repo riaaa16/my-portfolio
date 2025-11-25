@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import './Card.css'
 
 interface Project {
     title: string
@@ -32,8 +33,6 @@ export default function Projects() {
                 setData(rows)
             } catch (err: any) {
                 if (err.name !== 'AbortError') setError(String(err.message || err))
-            } finally {
-                setLoading(false);
             }
         }
 
@@ -50,6 +49,7 @@ export default function Projects() {
             return { title, image, tags, description, page, github };
         });
         setProjects(parsed);
+        setLoading(false);
     }, [data]); // Refresh when data changes
 
     // UI states
