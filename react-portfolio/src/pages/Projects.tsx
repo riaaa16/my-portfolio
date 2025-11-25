@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './Card.css'
+import './card.css'
 
 interface Project {
     title: string
