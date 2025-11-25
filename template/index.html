@@ -7,7 +7,6 @@
     <title>My Portfolio</title>
     <!--CSS-->
     <link rel="stylesheet" href="base.css">
-    <link rel="stylesheet" href="about.css">
     <!--BOOTSTRAP ICONS-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <!--FONTS-->
@@ -19,23 +18,14 @@
 
 <body>
     <div id="page">
-        <div id="header">
-            <div id="header-img">
-                <img src="public/images/arrietty.jpg" alt="Header Background">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-            <div id="about">
-                <div>
-                    <img src="public/images/profile.png" alt="Profile Picture">
-                </div>
-                <h1 style="text-align:center;">Viktoria Gaiser</h1>
-                <div>
+        <header>
+            <img id="header-img" src="public/images/arrietty.jpg" alt="Header Background">
+        </header>
+        <div id="inner">
+            <div id="sidebar">
+                <img id="pfp" src="public/images/profile.png" alt="Profile Picture">
+                <div id="about">
+                    <h1 style="text-align:center;">Viktoria Gaiser</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non tortor nec diam venenatis
                         ullamcorper. Quisque dapibus turpis enim, ut semper enim faucibus eget. Curabitur venenatis
@@ -43,48 +33,57 @@
                         Vivamus cursus efficitur metus, eget eleifend augue gravida ut. Donec sit amet imperdiet metus.
                         Sed posuere nulla volutpat nulla faucibus, in luctus quam finibus.
                     </p>
-                </div>
-                <div class="social-links">
-                    <a target="_blank" href="https://www.linkedin.com/in/viktoria-gaiser/" class="icon-link"
-                        aria-label="LinkedIn" title="LinkedIn">
-                        <i class="bi bi-linkedin" aria-hidden="true"></i>
-                        <span class="label">LinkedIn</span>
-                    </a>
-                    <a target="_blank" href="https://github.com/riaaa16" class="icon-link" aria-label="GitHub"
-                        title="GitHub">
-                        <i class="bi bi-github" aria-hidden="true"></i>
-                        <span class="label">GitHub</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div id="content">
-            <!--TEMPLATE FOR CREATING CARDS-->
-            <div class="card">
-                <div class="card-header">
-                    <h2>Project Title</h2>
-                    <div class="card-links">
-                        <a>
-                            <i class="bi bi-box-arrow-up-right"></i>
+                    <div class="social-links">
+                        <a target="_blank" href="https://www.linkedin.com/in/viktoria-gaiser/" class="icon-link"
+                            aria-label="LinkedIn" title="LinkedIn">
+                            <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            <span class="label">LinkedIn</span>
                         </a>
-                        <a>
+                        <a target="_blank" href="https://github.com/riaaa16" class="icon-link" aria-label="GitHub"
+                            title="GitHub">
                             <i class="bi bi-github" aria-hidden="true"></i>
+                            <span class="label">GitHub</span>
                         </a>
                     </div>
                 </div>
-                <img src="public/images/totoro.jpg">
-                <div class="tags">
-                    <span>Tag 1</span>
-                    <span>Tag 2</span>
+            </div>
+            <div id="main">
+                <nav>
+                    <ul>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div id="content">
+                    <!--TEMPLATE FOR CREATING CARDS-->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Project Title</h2>
+                            <div class="card-links">
+                                <a>
+                                    <i class="bi bi-box-arrow-up-right"></i>
+                                </a>
+                                <a>
+                                    <i class="bi bi-github" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <img src="public/images/totoro.jpg">
+                        <div class="tags">
+                            <span>Tag 1</span>
+                            <span>Tag 2</span>
+                        </div>
+                        <p>Description of the project goes here.</p>
+                    </div>
                 </div>
-                <p>Description of the project goes here.</p>
             </div>
         </div>
         <footer>
             <p>© 2025 My Portfolio</p>
         </footer>
+        <img id="easter-egg" src="public/images/jokebear.png" alt="Jokebear">
     </div>
-    <img id="easter-egg" src="public/images/jokebear.png" alt="Jokebear">
 </body>
 
 </html>
