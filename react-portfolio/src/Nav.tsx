@@ -1,10 +1,12 @@
+import { NavLink } from "react-router-dom"
+
 function Nav() {
     return (
         <nav>
             <ul>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><NavLink to="/projects">Projects</NavLink></li>
+                <li><NavLink to="/blog">Blog</NavLink></li>
+                <li><NavLink to="/contact">Contact</NavLink></li>
             </ul>
         </nav>
     )

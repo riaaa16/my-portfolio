@@ -10,81 +10,83 @@ interface Project {
 }
 
 export default function Projects() {
-    const [projects, setProjects] = useState<Project[]>([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState<string | null>(null)
+    const [data, setData] = useState<string[]>([]);
+    const [projects, setProjects] = useState<Project[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
-        let cancelled = false
+        const controller = new AbortController()
+        const signal = controller.signal
 
-        fetch('/projects/projects.tsv')
-            .then(res => {
-                if (!res.ok) throw new Error(`HTTP ${res.status}`)
-                return res.text()
-            })
-            .then(text => {
-                if (cancelled) return
-                const lines = text.trim().split(/\r?\n/)
-                // detect header row (optional)
-                const firstCols = lines[0]?.split('\t') ?? []
-                const hasHeader = firstCols.length >= 6 && /Title/i.test(firstCols[0])
-                const dataLines = (hasHeader ? lines.slice(1) : lines).filter(l => l.trim() !== '')
+        async function load() {
+            try {
+                setLoading(true);
+                const res = await fetch('/projects/projects.tsv', { signal })
+                if (!res.ok) throw new Error(`Failed to load projects: ${res.status}`)
+                const text = await res.text()
+                const rows = text.split(/\r?\n/) // Split by newlines
+                    .slice(1) // Remove header row
+                    .map(l => l.trim()) // Trim whitespace
+                    .filter(Boolean) // Filter out empty lines
+                setData(rows)
+            } catch (err: any) {
+                if (err.name !== 'AbortError') setError(String(err.message || err))
+            } finally {
+                setLoading(false);
+            }
+        }
 
-                const parsed = dataLines.map(line => {
-                    const cols = line.split('\t')
-                    return {
-                        title: cols[0] ?? '',
-                        image: cols[1] ?? '',
-                        tags: cols[2] ?? '',
-                        description: cols[3] ?? '',
-                        page: cols[4] ?? '',
-                        github: cols[5] ?? ''
-                    } as Project
-                })
+        load()
+        return () => controller.abort()
+    }, []);
 
-                setProjects(parsed)
-                setLoading(false)
-            })
-            .catch(err => {
-                if (cancelled) return
-                console.error('Error fetching/parsing projects.tsv', err)
-                setError('There was a problem loading the projects.')
-                setLoading(false)
-            })
+    // Process TSV data into projects
+    useEffect(() => {
+        if (!data || data.length === 0) return;
 
-        return () => { cancelled = true }
-    }, [])
+        const parsed: Project[] = data.map((row) => {
+            const [title, image, tags, description, page, github] = row.split("\t").map(cell => cell.trim());
+            return { title, image, tags, description, page, github };
+        });
+        setProjects(parsed);
+    }, [data]); // Refresh when data changes
 
-    if (loading) return (
-        <div>
-            <h1>Projects</h1>
-            <p>Loading projects…</p>
-        </div>
-    )
-
-    if (error) return (
-        <div>
-            <h1>Projects</h1>
-            <p>{error}</p>
-        </div>
-    )
+    // UI states
+    if (loading) return <p>Loading projects…</p>
+    if (error) return <p>Error loading projects: {error}</p>
+    if (projects.length === 0) return <p>No projects found.</p>
 
     return (
-        <div>
-            <h1>Projects</h1>
-            <div className="cards">
-                {projects.map((p, i) => (
-                    <article className="card" key={i}>
-                        {p.image && <img src={p.image.startsWith('/') ? p.image : `/projects/images/${p.image}`} alt={p.title} />}
-                        <h2>{p.title}</h2>
-                        <p>{p.description}</p>
+        <>
+            {projects.map((project, index) => (
+                <div className="card" key={index}>
+                    <div className="card-header">
+                        <h2>{project.title}</h2>
                         <div className="card-links">
-                            {p.page && <a href={p.page}>Live</a>}
-                            {p.github && <a href={p.github} target="_blank" rel="noopener noreferrer">Source</a>}
+                            <a href={project.page}>
+                                <i className="bi bi-box-arrow-up-right"></i>
+                            </a>
+                            <a href={project.github}>
+                                <i className="bi bi-github" aria-hidden="true"></i>
+                            </a>
                         </div>
-                    </article>
-                ))}
-            </div>
-        </div>
+                    </div>
+                    {project.image ? (
+                        <img
+                            src={"/projects/images/" + project.image + ".png"}
+                            alt={project.title}
+                            loading="lazy"
+                        />
+                    ) : null}
+                    <div className="tags">
+                        {project.tags.split(",").map((tag: string, tagIndex) => (
+                            <span key={tagIndex}>{tag.trim()}</span>
+                        ))}
+                    </div>
+                    <p>{project.description}</p>
+                </div>
+            ))}
+        </>
     )
 }

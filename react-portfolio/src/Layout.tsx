@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom"
 import Header from './Header'
 import Sidebar from './Sidebar'
 import Nav from './Nav'
@@ -10,12 +11,9 @@ export default function Layout() {
         <Sidebar />
         <div id="main">
           <Nav />
-          <div id="content">
-            <main>
-              <h1>Layout Preview</h1>
-              <p>Router is temporarily disabled so you can inspect the layout.</p>
-            </main>
-          </div>
+          <main id="content">
+            <Outlet />
+          </main>
         </div>
       </div>
 
