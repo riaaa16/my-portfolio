@@ -66,10 +66,3 @@
   box-shadow: 0 8px 18px rgba(0,0,0,0.08);
   outline: none;
 }
-
-/*ACTIVE*/
-.card-links a:active {
-}
-
-/*VISITED*/
-.card-links a:visited { color: darken(#2470e2, 10%); }

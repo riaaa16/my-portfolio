@@ -8,31 +8,38 @@
   --light-grey: grey;
   --dark-grey: rgb(35, 35, 35);
   --pink: rgb(196, 91, 140);
-  --brick: #b74c2e;
-  --mustard: #c9ba74;
+  --brick: #935151;
+  --mustard: #b8a861;
   --dark-green: #254127;
-  --tag: #e0e0e0;
+  --tag: #ebebeb;
   /*PAGE BORDER*/
   --border-w: 2px;
   --round: 2rem;
 }
 
 body {
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   font-family: 'Inclusive Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-optical-sizing: auto;
   position: relative;
   /*TO POSITION JOKEBEAR*/
   overflow-x: hidden;
-  /*
-    background-image: url("https://i.pinimg.com/736x/de/40/a5/de40a5b1b1dfef3af52e3e8b3cec81c8.jpg");
-    background-size: contain;
-    background-position: center center;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    */
-  color: var(--dark-grey);
   /*GLOBAL TEXT COLOR*/
+  color: var(--dark-grey);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #fff3f3;
+  background-image:
+    linear-gradient(180deg,rgba(209, 125, 132, 0.25) 0%, rgba(245, 244, 234, 0.75) 82%),
+    repeating-linear-gradient(45deg, #f9c8e180, #f9c8e180 20px, transparent 20px, transparent 40px),
+    repeating-linear-gradient(-45deg, #f9c8e180, #f9c8e180 20px, transparent 20px, transparent 40px);
+  background-attachment: fixed;
+  z-index: -10;
+  pointer-events: none;
 }
 
 #page {
@@ -41,7 +48,6 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: white;
 }
 
 #easter-egg {
@@ -120,6 +126,7 @@ header::after {
   gap: 0.5rem;
   border-left: var(--border-w) solid var(--light-grey);
   border-right: var(--border-w) solid var(--light-grey);
+  background-color: white;
 }
 
 
@@ -248,15 +255,39 @@ nav a[aria-current="page"]::after {
 }
 
 #about .icon-link {
-  color: var(--light-grey);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75ch;
+  color: var(--mustard);
   cursor: pointer;
-  transition: color 180ms ease;
-  will-change: color;
+  transition: color 180ms ease, transform 180ms cubic-bezier(.2,.8,.2,1), box-shadow 180ms cubic-bezier(.2,.8,.2,1);
+  will-change: transform, box-shadow, color;
+  transform: translateY(0);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
 }
 
 .icon-link .bi {
   font-size: 1.25rem;
   line-height: 1;
+  transition: transform 180ms ease;
+  display: inline-block;
+}
+
+/* Hover / focus lift */
+#about .icon-link:hover,
+#about .icon-link:focus,
+#about .icon-link:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  color: var(--pink);
+  outline: none;
+}
+
+#about .icon-link:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.10);
 }
 
 #about .social-links>a>.label {
@@ -272,11 +303,11 @@ nav a[aria-current="page"]::after {
 }
 
 footer {
-  margin-top: auto;
+  margin-top: 0;
   text-align: center;
   padding: 1rem;
-  background-color: var(--mustard);
-  color: var(--dark-green);
+  background-color: var(--brick);
+  color: white;
   font-weight: 500;
   overflow: hidden;
   /*BORDER*/
@@ -359,6 +390,10 @@ footer {
 
   #content {
     padding-top: 1rem;
+  }
+
+  #main {
+    align-self: stretch;
   }
 }
 

@@ -1,0 +1,23 @@
+div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+div.container ul {
+    list-style-position: inside;
+}
+
+div.container blockquote {
+    border: 1px solid var(--tag);
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--tag);
+}
+
+hr {
+    border-top: 1px solid var(--light-grey);
+    align-self: stretch;
+}

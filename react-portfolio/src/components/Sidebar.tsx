@@ -4,12 +4,11 @@ function Sidebar() {
     const name: string = "Viktoria Gaiser";
 
     const description: string = `
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non tortor nec diam venenatis
-    ullamcorper. uisque dapibus turpis enim, ut semper enim faucibus eget. Curabitur venenatis
-    fringilla felis, et gravida quam lacinia sit amet. Sed consectetur diam eu interdum congue. 
-    Vivamus cursus efficitur metus, eget eleifend augue gravida ut. Donec sit amet imperdiet metus. 
-    Sed posuere nulla volutpat nulla faucibus, in luctus quam finibus.
-    `;
+    Front-end engineer with a passion for creating user-friendly and visually appealing web applications.
+    
+    My fun fact is that I love making spreadsheets.
+    `
+    .trim();
 
     return (
         <>
@@ -17,7 +16,7 @@ function Sidebar() {
                 <img id="pfp" src={pfp} alt={pfpAlt}></img>
                 <div id="about">
                     <h1 style={{ textAlign: "center" }}>{name}</h1>
-                    <p>{description}</p>
+                    <p style={{ whiteSpace: "pre-line"}}>{description}</p>
                     <div className="social-links">
                         <a target="_blank" href="https://www.linkedin.com/in/viktoria-gaiser/" className="icon-link"
                             aria-label="LinkedIn" title="LinkedIn">
