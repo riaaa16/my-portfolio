@@ -6,6 +6,11 @@ div.container {
     gap: 1.5rem;
 }
 
+div.container a {
+    color: var(--pink);
+    font-weight:500;
+}
+
 div.container ul {
     list-style-position: inside;
 }
