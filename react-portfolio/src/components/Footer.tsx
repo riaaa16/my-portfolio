@@ -3,6 +3,7 @@ export default function Footer() {
         <>
             <footer>
                 <p>© 2025 Viktoria Gaiser</p>
+                <img id="easter-egg" src="/images/jokebear.png" alt="Jokebear" />
             </footer>
         </>
     )

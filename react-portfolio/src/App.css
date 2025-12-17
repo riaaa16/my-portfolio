@@ -21,25 +21,16 @@ body {
   padding: 3rem 1rem;
   font-family: 'Inclusive Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-optical-sizing: auto;
-  position: relative;
-  /*TO POSITION JOKEBEAR*/
   overflow-x: hidden;
-  /*GLOBAL TEXT COLOR*/
-  color: var(--dark-grey);
-}
-
-body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
+  /*BACKGROUND*/
   background-color: #fff3f3;
   background-image:
     linear-gradient(180deg,rgba(209, 125, 132, 0.25) 0%, rgba(245, 244, 234, 0.75) 82%),
     repeating-linear-gradient(45deg, #f9c8e180, #f9c8e180 20px, transparent 20px, transparent 40px),
     repeating-linear-gradient(-45deg, #f9c8e180, #f9c8e180 20px, transparent 20px, transparent 40px);
   background-attachment: fixed;
-  z-index: -10;
-  pointer-events: none;
+  /*GLOBAL TEXT COLOR*/
+  color: var(--dark-grey);
 }
 
 #page {
@@ -52,8 +43,8 @@ body::before {
 
 #easter-egg {
   position: absolute;
+  right: 0;
   bottom: 0;
-  right: 5%;
   width: 150px;
   height: auto;
   pointer-events: none;
@@ -309,12 +300,13 @@ footer {
   background-color: var(--brick);
   color: white;
   font-weight: 500;
-  overflow: hidden;
+  overflow: visible;
   /*BORDER*/
   border: var(--border-w) solid var(--light-grey);
   border-top: none;
   border-bottom-left-radius: var(--round);
   border-bottom-right-radius: var(--round);
+  position: relative; /*TO POSITION JOKEBEAR*/
 }
 
 /* RESPONSIVE BREAKPOINTS*/
