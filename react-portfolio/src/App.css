@@ -310,7 +310,6 @@ footer {
 
 /* RESPONSIVE BREAKPOINTS*/
 @media (max-width: 1024px) {
-
   /*TABLET*/
   body {
     padding: 2rem 1rem;
@@ -389,7 +388,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-
   /*PHONE*/
   body {
     padding: 0;
@@ -417,5 +415,23 @@ footer {
 
   #inner {
     padding: 1.5rem;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column
   }
+
+  #main {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+  }
+
+  #content {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
 }
