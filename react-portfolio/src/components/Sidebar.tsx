@@ -4,7 +4,7 @@ function Sidebar() {
     const name: string = "Viktoria Gaiser";
 
     const description: string = `
-    Front-end engineer with a passion for creating user-friendly and visually appealing web applications.
+    Front-end engineer interested in creating user-friendly and visually appealing web applications.
     
     My fun fact is that I love making spreadsheets.
     `
@@ -14,8 +14,8 @@ function Sidebar() {
         <>
             <div id="sidebar">
                 <img id="pfp" src={pfp} alt={pfpAlt}></img>
-                <div id="about">
-                    <h1 style={{ textAlign: "center" }}>{name}</h1>
+                <div id="about" style={{ textAlign: "center" }}>
+                    <h1>{name}</h1>
                     <p style={{ whiteSpace: "pre-line"}}>{description}</p>
                     <div className="social-links">
                         <a target="_blank" href="https://www.linkedin.com/in/viktoria-gaiser/" className="icon-link"

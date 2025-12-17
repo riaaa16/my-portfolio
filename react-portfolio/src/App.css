@@ -271,7 +271,6 @@ nav a[aria-current="page"]::after {
 #about .icon-link:focus,
 #about .icon-link:focus-visible {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
   color: var(--pink);
   outline: none;
 }
