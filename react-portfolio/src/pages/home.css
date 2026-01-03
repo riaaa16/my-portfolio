@@ -25,8 +25,18 @@ div.container ul {
 }
 
 div.container ul li {
-  white-space: normal;
+  flex: 0 1 auto;
   min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+div.container ul li a {
+  display: inline;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 div.container blockquote {
