@@ -11,8 +11,22 @@ div.container a {
     font-weight:500;
 }
 
+div.container a:visited {
+  color: var(--dark-green);
+}
+
 div.container ul {
-    list-style-position: inside;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+}
+
+div.container ul li {
+  white-space: normal;
+  min-width: 0;
 }
 
 div.container blockquote {

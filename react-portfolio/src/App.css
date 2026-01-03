@@ -292,6 +292,10 @@ nav a[aria-current="page"]::after {
   gap: 3rem;
 }
 
+div.container {
+  overflow-x: hidden;
+}
+
 div.container a:visited {
   color: var(--dark-green);
 }
