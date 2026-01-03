@@ -10,7 +10,7 @@
   --pink: rgb(196, 91, 140);
   --brick: #935151;
   --mustard: #b8a861;
-  --dark-green: #254127;
+  --dark-green: #4b6a3d;
   --tag: #ebebeb;
   /*PAGE BORDER*/
   --border-w: 2px;
@@ -271,7 +271,7 @@ nav a[aria-current="page"]::after {
 #about .icon-link:focus,
 #about .icon-link:focus-visible {
   transform: translateY(-4px);
-  color: var(--pink);
+  color: var(--dark-green);
   outline: none;
 }
 
@@ -290,6 +290,10 @@ nav a[aria-current="page"]::after {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+
+div.container a:visited {
+  color: var(--dark-green);
 }
 
 footer {

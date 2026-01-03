@@ -22,12 +22,14 @@ export default function Home() {
         <>
             <div className="container">
                 <p>
-                    This website draws inspiration from social media layouts and Notion's minimalist design.
-                    Portfolios reflect who we are as individuals.
-                    I want to create websites that are creative and engaging for users.
+                    This website draws inspiration from social media layouts and Tumblr blog themes.
+                    Project cards are read from my personal Notion Database, allowing for easy updates and management. Sticky rules are used to position the sidebar, navbar, and allow the header to peek through.
                 </p>
                 <p>
-                    It is mildly ironic considering the design of my portfolio, but there is a quote from a <a href="https://www.youtube.com/watch?v=9KdP2idt6LE">JetBrains showcase</a> I enjoy:
+                    Portfolios reflect who we are as individuals. My goal is to create websites that are creative and engaging for users.
+                </p>
+                <p>
+                    I think about this quote from this <a href="https://www.youtube.com/watch?v=9KdP2idt6LE">JetBrains showcase</a> often:
                 </p>
                 <blockquote cite="https://www.youtube.com/watch?v=9KdP2idt6LE">
                     It does kind of remind me of something that a designer once said to me when they were talking about their job and they said, "I arrange rectangles." And they followed it up with, "Sometimes, if I want to get fancy, I round the corners."
@@ -35,7 +37,7 @@ export default function Home() {
                     But I am wondering if maybe we've gone too far and all of our UIs now are kind of boring.
                 </blockquote>
                 <p>
-                    As AI creates and develops applications, I wonder if all of our websites will eventually become 'kind of boring' as well. Let humans design, with the help of AI.
+                    AI is a powerful tool, but how well that tool works depends on the user.
                 </p>
                 <hr></hr>
                 <h2>Credits</h2>
