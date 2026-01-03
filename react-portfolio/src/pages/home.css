@@ -8,35 +8,36 @@ div.container {
 
 div.container a {
     color: var(--pink);
-    font-weight:500;
+    font-weight: 500;
 }
 
 div.container a:visited {
-  color: var(--dark-green);
+    color: var(--dark-green);
 }
 
 div.container ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  list-style-position: inside;
-  padding: 0;
-  margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style-position: outside;
+    padding: 0;
+    margin: 0;
+    padding-left: 1.5ch;
 }
 
 div.container ul li {
-  flex: 0 1 auto;
-  min-width: 0;
-  max-width: 100%;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+    flex: 0 1 auto;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 div.container ul li a {
-  display: inline;
-  overflow-wrap: anywhere;
-  word-break: break-word;
+    display: inline;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 div.container blockquote {
